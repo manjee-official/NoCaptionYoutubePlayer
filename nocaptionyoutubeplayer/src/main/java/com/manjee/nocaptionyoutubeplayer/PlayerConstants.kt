@@ -1,4 +1,4 @@
-package com.pierfrancescosoffritti.androidyoutubeplayer.core.player
+package com.manjee.nocaptionyoutubeplayer
 
 class PlayerConstants {
 

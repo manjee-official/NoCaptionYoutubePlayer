@@ -1,8 +1,8 @@
-package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils
+package com.manjee.nocaptionyoutubeplayer.utils
 
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
+import com.manjee.nocaptionyoutubeplayer.PlayerConstants
+import com.manjee.nocaptionyoutubeplayer.YouTubePlayer
+import com.manjee.nocaptionyoutubeplayer.listeners.AbstractYouTubePlayerListener
 
 /**
  * Utility class responsible for tracking the state of YouTubePlayer.

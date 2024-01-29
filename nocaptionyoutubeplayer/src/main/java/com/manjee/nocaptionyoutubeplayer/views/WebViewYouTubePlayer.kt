@@ -1,4 +1,4 @@
-package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views
+package com.manjee.nocaptionyoutubeplayer.views
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -11,14 +11,14 @@ import android.webkit.WebChromeClient
 import android.webkit.WebSettings
 import android.webkit.WebView
 import androidx.annotation.VisibleForTesting
-import com.pierfrancescosoffritti.androidyoutubeplayer.R
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayerBridge
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.FullscreenListener
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.toFloat
+import com.manjee.nocaptionyoutubeplayer.PlayerConstants
+import com.manjee.nocaptionyoutubeplayer.R
+import com.manjee.nocaptionyoutubeplayer.YouTubePlayer
+import com.manjee.nocaptionyoutubeplayer.YouTubePlayerBridge
+import com.manjee.nocaptionyoutubeplayer.listeners.FullscreenListener
+import com.manjee.nocaptionyoutubeplayer.listeners.YouTubePlayerListener
+import com.manjee.nocaptionyoutubeplayer.options.IFramePlayerOptions
+import com.manjee.nocaptionyoutubeplayer.toFloat
 import java.io.BufferedReader
 import java.io.InputStream
 import java.io.InputStreamReader

@@ -1,6 +1,7 @@
-package com.pierfrancescosoffritti.androidyoutubeplayer.core.player
+package com.manjee.nocaptionyoutubeplayer
 
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener
+import com.manjee.nocaptionyoutubeplayer.listeners.YouTubePlayerListener
+
 
 /**
  * Use this interface to control the playback of YouTube videos and to listen to their events.

@@ -1,6 +1,6 @@
-package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners
+package com.manjee.nocaptionyoutubeplayer.listeners
 
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.manjee.nocaptionyoutubeplayer.YouTubePlayer
 
 interface YouTubePlayerCallback {
   fun onYouTubePlayer(youTubePlayer: YouTubePlayer)

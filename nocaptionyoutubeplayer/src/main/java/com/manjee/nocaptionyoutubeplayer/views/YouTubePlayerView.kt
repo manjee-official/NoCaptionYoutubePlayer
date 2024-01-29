@@ -1,19 +1,22 @@
-package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views
+package com.manjee.nocaptionyoutubeplayer.views
 
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams
 import android.widget.FrameLayout
 import androidx.annotation.LayoutRes
 import androidx.lifecycle.*
-import com.pierfrancescosoffritti.androidyoutubeplayer.R
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.*
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.loadOrCueVideo
+import com.manjee.nocaptionyoutubeplayer.R
+import com.manjee.nocaptionyoutubeplayer.YouTubePlayer
+import com.manjee.nocaptionyoutubeplayer.listeners.AbstractYouTubePlayerListener
+import com.manjee.nocaptionyoutubeplayer.listeners.FullscreenListener
+import com.manjee.nocaptionyoutubeplayer.listeners.YouTubePlayerCallback
+import com.manjee.nocaptionyoutubeplayer.listeners.YouTubePlayerListener
+import com.manjee.nocaptionyoutubeplayer.options.IFramePlayerOptions
+import com.manjee.nocaptionyoutubeplayer.utils.loadOrCueVideo
+
 
 private const val AUTO_INIT_ERROR = "YouTubePlayerView: If you want to initialize this view manually, " +
         "you need to set 'enableAutomaticInitialization' to false."

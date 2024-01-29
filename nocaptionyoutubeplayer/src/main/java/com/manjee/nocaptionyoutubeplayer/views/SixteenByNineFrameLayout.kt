@@ -1,8 +1,7 @@
-package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views
+package com.manjee.nocaptionyoutubeplayer.views
 
 import android.content.Context
 import android.util.AttributeSet
-import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import androidx.annotation.RestrictTo

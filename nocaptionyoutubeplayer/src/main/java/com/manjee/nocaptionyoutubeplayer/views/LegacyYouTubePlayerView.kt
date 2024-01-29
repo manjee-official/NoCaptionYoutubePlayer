@@ -1,4 +1,4 @@
-package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views
+package com.manjee.nocaptionyoutubeplayer.views
 
 import android.content.Context
 import android.util.AttributeSet
@@ -6,15 +6,15 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.lifecycle.*
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.FullscreenListener
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerCallback
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.YouTubePlayerListener
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options.IFramePlayerOptions
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.NetworkObserver
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils.PlaybackResumer
+import com.manjee.nocaptionyoutubeplayer.PlayerConstants
+import com.manjee.nocaptionyoutubeplayer.YouTubePlayer
+import com.manjee.nocaptionyoutubeplayer.listeners.AbstractYouTubePlayerListener
+import com.manjee.nocaptionyoutubeplayer.listeners.FullscreenListener
+import com.manjee.nocaptionyoutubeplayer.listeners.YouTubePlayerCallback
+import com.manjee.nocaptionyoutubeplayer.listeners.YouTubePlayerListener
+import com.manjee.nocaptionyoutubeplayer.options.IFramePlayerOptions
+import com.manjee.nocaptionyoutubeplayer.utils.NetworkObserver
+import com.manjee.nocaptionyoutubeplayer.utils.PlaybackResumer
 
 /**
  * Legacy internal implementation of YouTubePlayerView. The user facing YouTubePlayerView delegates

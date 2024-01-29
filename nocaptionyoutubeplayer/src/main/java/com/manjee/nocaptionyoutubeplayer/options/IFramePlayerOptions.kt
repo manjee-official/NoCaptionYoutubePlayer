@@ -1,4 +1,4 @@
-package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.options
+package com.manjee.nocaptionyoutubeplayer.options
 
 import org.json.JSONException
 import org.json.JSONObject

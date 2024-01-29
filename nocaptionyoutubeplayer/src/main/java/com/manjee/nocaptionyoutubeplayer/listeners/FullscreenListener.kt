@@ -1,4 +1,4 @@
-package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners
+package com.manjee.nocaptionyoutubeplayer.listeners
 
 import android.view.View
 

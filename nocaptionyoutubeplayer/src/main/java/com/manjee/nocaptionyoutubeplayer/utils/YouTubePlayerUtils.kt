@@ -1,9 +1,9 @@
 @file:JvmName("YouTubePlayerUtils")
 
-package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.utils
+package com.manjee.nocaptionyoutubeplayer.utils
 
 import androidx.lifecycle.Lifecycle
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.manjee.nocaptionyoutubeplayer.YouTubePlayer
 
 /**
  * Calls [YouTubePlayer.cueVideo] or [YouTubePlayer.loadVideo] depending on which one is more appropriate.

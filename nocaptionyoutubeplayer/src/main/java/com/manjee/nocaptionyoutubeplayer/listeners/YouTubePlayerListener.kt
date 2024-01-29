@@ -1,7 +1,7 @@
-package com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners
+package com.manjee.nocaptionyoutubeplayer.listeners
 
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.PlayerConstants
-import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer
+import com.manjee.nocaptionyoutubeplayer.PlayerConstants
+import com.manjee.nocaptionyoutubeplayer.YouTubePlayer
 
 interface YouTubePlayerListener {
   /**
