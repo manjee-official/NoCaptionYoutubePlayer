@@ -11,6 +11,7 @@ import android.os.Build
 import android.os.Handler
 import android.os.Looper
 import androidx.annotation.RequiresApi
+import java.lang.ref.WeakReference
 
 /** Class used to observe changes to network state */
 internal class NetworkObserver(private val context: Context) {
@@ -36,13 +37,13 @@ internal class NetworkObserver(private val context: Context) {
 
   /** Stop observing network changes and cleanup */
   fun destroy() {
-    // Min API for `unregisterNetworkCallback` is L, but we use `registerDefaultNetworkCallback` only for N and above.
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-      val callback = networkCallback ?: return
-      val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-      connectivityManager.unregisterNetworkCallback(callback)
-    }
-    else {
+      // Check if networkCallback is not null before using it
+      networkCallback?.let { callback ->
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        connectivityManager.unregisterNetworkCallback(callback)
+      }
+    } else {
       val receiver = networkBroadcastReceiver ?: return
       runCatching { context.unregisterReceiver(receiver) }
     }
@@ -56,32 +57,38 @@ internal class NetworkObserver(private val context: Context) {
   private fun doObserveNetwork(context: Context) {
     val callback = object : ConnectivityManager.NetworkCallback() {
       private val mainThreadHandler = Handler(Looper.getMainLooper())
+
       override fun onAvailable(network: Network) {
-        // the callback is not on the main thread
         mainThreadHandler.post {
           listeners.forEach { it.onNetworkAvailable() }
         }
       }
 
       override fun onLost(network: Network) {
-        // the callback is not on the main thread
         mainThreadHandler.post {
           listeners.forEach { it.onNetworkUnavailable() }
         }
       }
     }
-    networkCallback = callback
 
+    // Register the callback
+    networkCallback = callback
     val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
     connectivityManager.registerDefaultNetworkCallback(callback)
   }
+
 
   private fun doObserveNetworkLegacy(context: Context) {
     networkBroadcastReceiver = NetworkBroadcastReceiver(
       onNetworkAvailable = { listeners.forEach { it.onNetworkAvailable() } },
       onNetworkUnavailable = { listeners.forEach { it.onNetworkUnavailable() } },
     )
-    context.registerReceiver(networkBroadcastReceiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+
+    // Use a weak reference to avoid context leaks
+    val weakContext = WeakReference(context)
+    networkBroadcastReceiver?.let { receiver ->
+      weakContext.get()?.registerReceiver(receiver, IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION))
+    }
   }
 }
 
@@ -94,8 +101,7 @@ private class NetworkBroadcastReceiver(
   override fun onReceive(context: Context, intent: Intent) {
     if (isConnectedToInternet(context)) {
       onNetworkAvailable()
-    }
-    else {
+    } else {
       onNetworkUnavailable()
     }
   }

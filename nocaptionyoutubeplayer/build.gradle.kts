@@ -51,7 +51,7 @@ afterEvaluate {
                 // You can then customize attributes of the publication as shown below.
                 groupId = "com.github.manjee-official"
                 artifactId = "NoCaptionYoutubePlayer"
-                version = "0.0.4"
+                version = "0.0.5"
             }
             // Creates a Maven publication called “debug”.
             create<MavenPublication>("debug") {
@@ -60,7 +60,7 @@ afterEvaluate {
 
                 groupId = "com.github.manjee-official"
                 artifactId = "NoCaptionYoutubePlayer"
-                version = "0.0.4"
+                version = "0.0.5"
             }
         }
     }
