@@ -31,7 +31,6 @@ internal class LegacyYouTubePlayerView(
 
   internal val webViewYouTubePlayer = WebViewYouTubePlayer(context, listener)
 
-//  private val networkObserver = NetworkObserver(context.applicationContext)
   private val playbackResumer = PlaybackResumer()
 
   internal var isYouTubePlayerReady = false
@@ -68,19 +67,6 @@ internal class LegacyYouTubePlayerView(
       }
     })
 
-//    networkObserver.listeners.add(object : NetworkObserver.Listener {
-//      override fun onNetworkAvailable() {
-//        if (!isYouTubePlayerReady) {
-//          initialize()
-//        }
-//        else {
-//          playbackResumer.resume(webViewYouTubePlayer.youtubePlayer)
-//        }
-//      }
-//
-//      override fun onNetworkUnavailable() { }
-//    })
-
     if (!isYouTubePlayerReady) {
       initialize()
     }
@@ -105,17 +91,9 @@ internal class LegacyYouTubePlayerView(
       throw IllegalStateException("This YouTubePlayerView has already been initialized.")
     }
 
-    if (handleNetworkEvents) {
-//      networkObserver.observeNetwork()
-    }
-
     initialize = {
       webViewYouTubePlayer.initialize({ it.addListener(youTubePlayerListener) }, playerOptions)
     }
-
-//    if (!handleNetworkEvents) {
-//      initialize()
-//    }
 
     initialize()
   }
