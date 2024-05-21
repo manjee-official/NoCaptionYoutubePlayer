@@ -49,18 +49,18 @@ afterEvaluate {
                 from(components["release"])
 
                 // You can then customize attributes of the publication as shown below.
-                groupId = "com.github.manjee-official"
+                groupId = "com.github.manjees"
                 artifactId = "NoCaptionYoutubePlayer"
-                version = "0.0.8"
+                version = "0.0.9"
             }
             // Creates a Maven publication called “debug”.
             create<MavenPublication>("debug") {
                 // Applies the component for the debug build variant.
                 from(components["debug"])
 
-                groupId = "com.github.manjee-official"
+                groupId = "com.github.manjees"
                 artifactId = "NoCaptionYoutubePlayer"
-                version = "0.0.8"
+                version = "0.0.9"
             }
         }
     }
